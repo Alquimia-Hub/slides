@@ -1,21 +1,20 @@
 import Slide from "@/components/Slide";
 import { useMotionVariants } from "@/lib/motion";
 import { motion } from "framer-motion";
+import Image from "next/image";
 
 function BinanceMark() {
   return (
     <div translate="no" className="flex items-center gap-3">
-      <div className="flex h-12 w-12 items-center justify-center rounded-xl border border-binance-yellow/40 bg-binance-yellow/10">
-        <svg
-          viewBox="0 0 32 32"
-          className="h-7 w-7 text-binance-yellow"
+      <div className="relative h-12 w-12 shrink-0 overflow-hidden rounded-xl border border-binance-yellow/40 bg-neutral-950">
+        <Image
+          src="/bnb-chain-logo.png"
+          alt=""
+          fill
+          sizes="48px"
+          className="object-contain p-1"
           aria-hidden
-        >
-          <path
-            fill="currentColor"
-            d="M12.1 10.6 9.4 13.3 12.1 16 14.8 13.3zm3.8-3.7L13.2 9.6l2.7 2.7 2.7-2.7zm7.5 3.7-2.7-2.7-2.7 2.7 2.7 2.7zm-11.3 0-2.7-2.7-2.7 2.7 2.7 2.7zm5.7 5.6-2.7-2.7-2.7 2.7 2.7 2.7zm3.8-3.7 2.7 2.7-2.7 2.7-2.7-2.7zM16 6.9l2.7 2.7L16 12.3l-2.7-2.7z"
-          />
-        </svg>
+        />
       </div>
       <span className="text-lg font-semibold tracking-wide text-white">
         Binance

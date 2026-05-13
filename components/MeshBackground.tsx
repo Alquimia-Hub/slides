@@ -26,7 +26,7 @@ export default function MeshBackground({
   const speed = paused ? 0 : IDLE_SPEED;
 
   return (
-    <div className="relative min-h-screen overflow-hidden bg-binance-dark">
+    <div className="relative min-h-screen overflow-x-hidden bg-binance-dark">
       <MeshGradient
         style={{
           position: "absolute",

@@ -16,7 +16,7 @@ const geistMono = Geist_Mono({
   display: "swap",
 });
 
-const pageTitle = "Crypto for Agents: opBNB en Argentina";
+const pageTitle = "Crypto for AI Agents: opBNB en Argentina";
 const pageDescription =
   "Workshop: cómo opBNB habilita pagos autónomos de IA en Argentina (Binance Arg + Alquimia).";
 

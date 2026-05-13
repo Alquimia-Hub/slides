@@ -7,14 +7,6 @@ import SlideLoading from "./SlideLoading";
 const lazySlideSpecs = [
   { id: "prefacio", load: () => import("./02-prefacio") },
   { id: "problema-argentina", load: () => import("./03-problema-argentina") },
-  { id: "pagos-agenticos", load: () => import("./04-que-son-pagos-agenticos") },
-  { id: "a2a", load: () => import("./05-a2a") },
-  { id: "a2b", load: () => import("./06-a2b") },
-  { id: "a2c", load: () => import("./07-a2c") },
-  { id: "solucion-opbnb", load: () => import("./08-solucion-opbnb") },
-  { id: "ventajas-tecnicas", load: () => import("./09-ventajas-tecnicas") },
-  { id: "demo", load: () => import("./10-demo") },
-  { id: "oportunidad", load: () => import("./11-oportunidad") },
   { id: "cierre", load: () => import("./12-cierre") },
 ] as const;
 

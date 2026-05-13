@@ -30,8 +30,9 @@ export default function Slide12Cierre() {
           animate="show"
           className="text-sm text-white/60"
         >
-          Título del workshop: &ldquo;Crypto for Agents: Cómo opBNB habilita
-          pagos autónomos de IA en Argentina&rdquo;
+          Título del workshop: &ldquo;Crypto for AI Agents&rdquo;. Mensaje central:
+          &ldquo;La forma en la que gestionamos nuestras FINANZAS, va a cambiar
+          para siempre con IA&rdquo;
         </motion.p>
       </div>
     </Slide>

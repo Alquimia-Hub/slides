@@ -82,7 +82,7 @@ export default function Deck() {
         <AnimatePresence mode="wait" initial={false}>
           <motion.div
             key={slides[index].id}
-            className="min-h-screen [contain:layout_style_paint]"
+            className="min-h-screen"
             variants={slidePageVariants}
             initial="hidden"
             animate="show"

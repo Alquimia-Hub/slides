@@ -29,7 +29,7 @@ export default function Slide01Cover() {
   return (
     <Slide
       eyebrow="Workshop · Binance Arg + Alquimia · Mayo 2026"
-      title="Crypto for Agents"
+      title="Crypto for AI Agents"
       titleAs="h1"
       titleClassName="text-5xl !leading-tight sm:text-6xl lg:text-7xl"
       align="center"
@@ -39,9 +39,11 @@ export default function Slide01Cover() {
           variants={fadeUpVariants}
           initial="hidden"
           animate="show"
-          className="text-balance text-3xl font-medium leading-snug text-binance-yellow sm:text-4xl"
+          className="text-balance text-3xl font-medium leading-snug text-white sm:text-4xl"
         >
-          Cómo opBNB habilita pagos autónomos de IA en Argentina
+          La forma en la que gestionamos nuestras{" "}
+          <strong className="font-bold text-binance-yellow">FINANZAS</strong>,
+          va a cambiar para siempre con IA
         </motion.p>
 
         <motion.div

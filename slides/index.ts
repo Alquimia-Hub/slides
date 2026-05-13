@@ -5,9 +5,11 @@ import SlideLoading from "./SlideLoading";
 
 /** Portada en el chunk principal para LCP estable; el resto se parte por ruta. */
 const lazySlideSpecs = [
-  { id: "prefacio", load: () => import("./02-prefacio") },
-  { id: "problema-argentina", load: () => import("./03-problema-argentina") },
-  { id: "cierre", load: () => import("./12-cierre") },
+  { id: "sobre-nosotros", load: () => import("./02-sobre-nosotros") },
+  { id: "prefacio", load: () => import("./03-prefacio") },
+  { id: "problema-argentina", load: () => import("./04-problema-argentina") },
+  { id: "demo", load: () => import("./05-demo") },
+  { id: "cierre", load: () => import("./06-cierre") },
 ] as const;
 
 export type SlideDefinition = {

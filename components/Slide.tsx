@@ -9,6 +9,8 @@ export type SlideAlign = "center" | "start";
 export type SlideProps = {
   eyebrow?: string;
   title: string;
+  /** Icono decorativo a la izquierda del título. Se renderiza con `aria-hidden`. */
+  titleIcon?: React.ReactNode;
   subtitle?: string;
   /** Por accesibilidad: un solo `h1` en el deck (portada). Resto: `h2`. */
   titleAs?: "h1" | "h2";
@@ -23,6 +25,7 @@ export type SlideProps = {
 export default function Slide({
   eyebrow,
   title,
+  titleIcon,
   subtitle,
   titleAs = "h2",
   titleClassName,
@@ -67,17 +70,49 @@ export default function Slide({
           </motion.p>
         ) : null}
 
-        <MotionTitle
-          variants={fadeUpVariants}
-          className={cn(
-            compact
-              ? "text-balance scroll-mt-24 text-3xl font-bold tracking-tight text-white sm:text-4xl lg:text-[2.85rem]"
-              : "text-balance scroll-mt-24 text-4xl font-bold tracking-tight text-white sm:text-5xl lg:text-6xl",
-            titleClassName,
-          )}
-        >
-          {title}
-        </MotionTitle>
+        {titleIcon ? (
+          <motion.div
+            variants={fadeUpVariants}
+            className={cn(
+              "flex items-center",
+              compact ? "gap-3 sm:gap-4" : "gap-4 sm:gap-5",
+            )}
+          >
+            <span
+              aria-hidden
+              className={cn(
+                "flex shrink-0 items-center justify-center rounded-xl border border-binance-yellow/30 bg-binance-yellow/10 text-binance-yellow",
+                compact
+                  ? "h-12 w-12 sm:h-14 sm:w-14"
+                  : "h-14 w-14 sm:h-16 sm:w-16",
+              )}
+            >
+              {titleIcon}
+            </span>
+            <MotionTitle
+              className={cn(
+                compact
+                  ? "text-balance scroll-mt-24 text-3xl font-bold tracking-tight text-white sm:text-4xl lg:text-[2.85rem]"
+                  : "text-balance scroll-mt-24 text-4xl font-bold tracking-tight text-white sm:text-5xl lg:text-6xl",
+                titleClassName,
+              )}
+            >
+              {title}
+            </MotionTitle>
+          </motion.div>
+        ) : (
+          <MotionTitle
+            variants={fadeUpVariants}
+            className={cn(
+              compact
+                ? "text-balance scroll-mt-24 text-3xl font-bold tracking-tight text-white sm:text-4xl lg:text-[2.85rem]"
+                : "text-balance scroll-mt-24 text-4xl font-bold tracking-tight text-white sm:text-5xl lg:text-6xl",
+              titleClassName,
+            )}
+          >
+            {title}
+          </MotionTitle>
+        )}
 
         {subtitle ? (
           <motion.p

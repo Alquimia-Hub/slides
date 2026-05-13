@@ -33,7 +33,8 @@ export default function MeshBackground({
           inset: 0,
           width: "100%",
           height: "100%",
-          opacity: 0.76,
+          opacity: 0.42,
+          filter: "blur(28px)",
           contain: "paint",
         }}
         colors={meshGradientColors}
@@ -43,6 +44,10 @@ export default function MeshBackground({
         grainOverlay={0}
         speed={speed}
         scale={0.88}
+      />
+      <div
+        aria-hidden
+        className="pointer-events-none absolute inset-0 bg-binance-dark/55"
       />
       <div className="relative z-10 min-h-screen">{children}</div>
     </div>

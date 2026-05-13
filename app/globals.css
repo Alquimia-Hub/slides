@@ -30,6 +30,16 @@ body {
   touch-action: manipulation;
 }
 
+/* Live mini-render del cover en las cards de la galería:
+   forzamos al <section min-h-screen> de cada slide a llenar el contenedor escalado en lugar del viewport. */
+.deck-thumb {
+  contain: layout paint size;
+}
+.deck-thumb section {
+  min-height: 100% !important;
+  height: 100%;
+}
+
 /* Enlace saltar al contenido: oculto hasta foco (APG / WCAG) */
 .skip-to-content {
   position: absolute;

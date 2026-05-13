@@ -16,12 +16,14 @@ const geistMono = Geist_Mono({
   display: "swap",
 });
 
-const pageTitle = "Crypto for AI Agents: opBNB en Argentina";
-const pageDescription =
-  "Workshop: cómo opBNB habilita pagos autónomos de IA en Argentina (Binance Arg + Alquimia).";
+const pageTitle = "Alquimia — Presentaciones";
+const pageDescription = "Galería de presentaciones de Alquimia.";
 
 export const metadata: Metadata = {
-  title: pageTitle,
+  title: {
+    default: pageTitle,
+    template: "%s — Alquimia",
+  },
   description: pageDescription,
   openGraph: {
     title: pageTitle,
@@ -50,7 +52,7 @@ export default function RootLayout({
       lang="es"
       className={`${geistSans.variable} ${geistMono.variable} h-full scroll-smooth antialiased dark`}
     >
-      <body className="min-h-full overflow-hidden bg-binance-dark text-white [-webkit-tap-highlight-color:rgba(240,185,11,0.2)]">
+      <body className="min-h-full bg-binance-dark text-white [-webkit-tap-highlight-color:rgba(240,185,11,0.2)]">
         <SkipToContent />
         {children}
       </body>

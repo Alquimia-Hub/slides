@@ -1,15 +1,19 @@
 "use client";
 
 import SlideNav from "@/components/ui/SlideNav";
+import { getDeck } from "@/decks";
 import { useMotionVariants } from "@/lib/motion";
-import { preloadAdjacentSlides, slides } from "@/slides";
 import { AnimatePresence, motion } from "framer-motion";
-import { useCallback, useEffect, useState } from "react";
+import { notFound } from "next/navigation";
+import { useCallback, useEffect, useMemo, useState } from "react";
 
-export default function Deck() {
+export default function Deck({ slug }: { slug: string }) {
+  const deck = useMemo(() => getDeck(slug), [slug]);
+  if (!deck) notFound();
+
   const { slidePageVariants } = useMotionVariants();
   const [index, setIndex] = useState(0);
-  const total = slides.length;
+  const total = deck.slides.length;
 
   const next = useCallback(
     () => setIndex((i) => Math.min(i + 1, total - 1)),
@@ -64,10 +68,10 @@ export default function Deck() {
   }, [next, prev, total]);
 
   useEffect(() => {
-    preloadAdjacentSlides(index, total);
-  }, [index, total]);
+    deck.preloadAdjacent(index);
+  }, [index, deck]);
 
-  const Current = slides[index].Component;
+  const Current = deck.slides[index].Component;
 
   return (
     <div className="relative min-h-screen">
@@ -81,7 +85,7 @@ export default function Deck() {
         </p>
         <AnimatePresence mode="wait" initial={false}>
           <motion.div
-            key={slides[index].id}
+            key={deck.slides[index].id}
             className="min-h-screen"
             variants={slidePageVariants}
             initial="hidden"
